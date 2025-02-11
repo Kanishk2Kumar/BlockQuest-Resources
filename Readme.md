@@ -1,0 +1,119 @@
+import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import { AppSidebar } from "@/components/app-sidebar";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { Separator } from "@/components/ui/separator";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+
+export default function Page() {
+  const [readme, setReadme] = useState(`
+# What Are We Building Today
+
+Hey everyone!! We are so excited to see you in another course in our Core series. We promise this is gonna be super fun and you will get so much to learn! You might wonder that what are we building in this course. Well, we are building a very interesting project which is a pseudonymous social media forum. 
+
+Pro tip: Staying connected with blockchain projects through their official GitHub repos can lead to unexpected perks. Many chains reward active community members with airdrops and other incentives. Make sure to follow [Core's repo](https://github.com/coredao-org) to stay in the loop!
+
+![Intro.png](https://github.com/0xmetaschool/Learning-Projects/blob/main/assests_for_all/core-c5-build-decentralized-sm-dapp/1.%20What%20Are%20We%20Building%20Today/Intro.webp?raw=true)
+
+In this dApp, we will create a smart contract to create your post and have additional functionalities like liking, unliking posts and even commenting on posts. We are already filled with enthusiasm to take you through this one and hope you are too! 
+
+So get ready to get on board with us on this epic adventure! 
+
+### Why a Decentralized Social Media Platform?
+
+This is going to equip you with a great deal of knowledge of decentralized social media dApp. Today, we have centralized social media platforms all over, So wouldn’t it be fun to build our own decentralized one?
+
+- Learn and build features used in our everyday social media app
+- Earn a badass NFT badge that shows your skills.
+
+## Course Overview
+
+We will:
+
+1. Setting up Core blockchain development environment
+2. Learn how to develop smart contracts
+3. Learn how to build and deploy a Social Media dApp using Solidity
+
+## Who exactly should take this course?
+
+This course is for beginner to intermediate Web3 developers who wish to learn about Core blockchain and have completed our previous courses on the Core blockchain. You should have basic programming knowledge as it will help you have a quick start to this course but if not, we are here for you!
+
+## What will you be getting out of this course?
+
+You will be getting the following outcomes when you complete this course:
+
+1. Build a decentralized Pseudonymous social forum.
+2. Create a user authentication and profile management system.
+3. Develop a post creation feature with likes and comments functionality.
+4. Claim your NFT on course completion.
+
+## Tool Time: Gathering Your Gear
+
+There are a few tools that you need to install to proceed with the course. Make sure you have the following:
+
+1.  Download & Install:
+    1. [MetaMask.io](https://metamask.io/)
+    2. [Node.js](https://nodejs.org/)
+    3. [Visual Studio](https://code.visualstudio.com/)
+        1. **Power-Up:** Install the "Solidity" extension. You can use the following extension.
+            
+            ![solidity-extension.png](https://github.com/0xmetaschool/Learning-Projects/blob/main/assests_for_all/Battle%20Royale%20-%20core%20C4/1.%20Battle%20Royale%20Fundamentals/3%20Setting%20Up%20the%20Project%20Structure/solidity-extension.webp?raw=true)
+            
+2. Connect Metamask to your Core Testnet with the RPC URL of [https://rpc.test.btcs.network](https://rpc.test.btcs.network/).
+3. Fetch some tokens from the [Core testnet faucet](https://scan.test.btcs.network/faucet) by entering your wallet address to receive 1 CORE.
+
+## Proof of completion
+
+If you complete this course with us, you will be getting a special NFT which will unlock many more opportunities for you on the Metaschool platform. Here is what the NFT looks like.
+
+![core c5.gif](https://github.com/0xmetaschool/Learning-Projects/blob/main/assests_for_all/core-c5-build-decentralized-sm-dapp/1.%20What%20Are%20We%20Building%20Today/core_c5.webp?raw=true)
+
+Now before we move forward, let’s set some house rules first.
+
+1. Kindly do your quick assignments properly.
+2. Join [our discord server](https://discord.gg/Jf4ArqVb) and ask all relevant questions there.
+3. We are a free open-source platform and if you follow us on [Github](https://github.com/0xmetaschool), it would be a great support. 🫣
+4. Stay happy and positive!
+
+Alright guys, no need to wait any longer. Let’s get started!
+`);
+
+  return (
+    <SidebarProvider>
+      <AppSidebar className="mt-20" />
+      <SidebarInset>
+        <header className="flex h-16 shrink-0 items-center gap-2 border-b">
+          <div className="flex items-center gap-2 px-3">
+            <SidebarTrigger />
+            <Separator orientation="vertical" className="mr-2 h-4" />
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem className="hidden md:block">
+                  <BreadcrumbLink href="#">Building Your Application</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator className="hidden md:block" />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          </div>
+        </header>
+        <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min p-4 bg-white shadow-lg overflow-auto">
+          <ReactMarkdown>{readme}</ReactMarkdown>
+        </div>
+      </SidebarInset>
+    </SidebarProvider>
+  );
+}
