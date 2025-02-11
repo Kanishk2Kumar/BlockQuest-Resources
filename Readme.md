@@ -53,6 +53,10 @@ There are a few tools that you need to install to proceed with the course. Make 
 2. Connect Metamask to your Core Testnet with the RPC URL of [https://rpc.test.btcs.network](https://rpc.test.btcs.network/).
 3. Fetch some tokens from the [Core testnet faucet](https://scan.test.btcs.network/faucet) by entering your wallet address to receive 1 CORE.
 
+## Code Snippet Test
+```bash
+This is a code snipet Test, will it load?
+```
 ## Proof of completion
 
 If you complete this course with us, you will be getting a special NFT which will unlock many more opportunities for you on the Metaschool platform. Here is what the NFT looks like.
