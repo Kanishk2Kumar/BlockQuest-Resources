@@ -1,23 +1,3 @@
-import { useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
-import { AppSidebar } from "@/components/app-sidebar";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
-
-export default function Page() {
-  const [readme, setReadme] = useState(`
 # What Are We Building Today
 
 Hey everyone!! We are so excited to see you in another course in our Core series. We promise this is gonna be super fun and you will get so much to learn! You might wonder that what are we building in this course. Well, we are building a very interesting project which is a pseudonymous social media forum. 
@@ -87,33 +67,3 @@ Now before we move forward, let’s set some house rules first.
 4. Stay happy and positive!
 
 Alright guys, no need to wait any longer. Let’s get started!
-`);
-
-  return (
-    <SidebarProvider>
-      <AppSidebar className="mt-20" />
-      <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 border-b">
-          <div className="flex items-center gap-2 px-3">
-            <SidebarTrigger />
-            <Separator orientation="vertical" className="mr-2 h-4" />
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">Building Your Application</BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-          </div>
-        </header>
-        <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min p-4 bg-white shadow-lg overflow-auto">
-          <ReactMarkdown>{readme}</ReactMarkdown>
-        </div>
-      </SidebarInset>
-    </SidebarProvider>
-  );
-}
